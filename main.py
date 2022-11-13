@@ -51,7 +51,7 @@ async def tweet():
 
     for tweet in tweets:
         tid = tweet.id
-        isTweet = determine_tweet_type(tweet._json)
+        isTweet = ifroottweet(tweet._json)
         # print(isTweet)
 
     id = 0
@@ -73,15 +73,14 @@ async def tweet():
             file.close()
 
 
-# https://developer.twitter.com/en/docs/tutorials/determining-tweet-types
-def determine_tweet_type(tweet):
-    # Check for reply indicator first
+
+def ifroottweet(tweet):
     if tweet["in_reply_to_status_id"] is not None:
         tweet_type = False
-    # Check boolean quote status field and make sure it's not a RT of a Quote Tweet 
+
     elif tweet["is_quote_status"] is True and not tweet["text"].startswith("RT"):
         tweet_type = False
-    # Check both indicators of a Retweet
+        
     elif tweet["text"].startswith("RT") and tweet.get("retweeted_status") is not None:
         tweet_type = False
     else:
