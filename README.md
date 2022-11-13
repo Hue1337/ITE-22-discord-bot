@@ -1,4 +1,4 @@
-# ITE-22-twitter-bot
+# ITE-22-discord-bot
 
 ITE-22 Discord bot sharing <a href="https://pwr.edu.pl/"/>Wroclaw University of Science and Technology</a> tweets to a specified Discord channel.
 
