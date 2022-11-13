@@ -33,7 +33,7 @@ url = 'https://twitter.com/PWr_Wroclaw/status/'
 @client.event
 async def on_ready():
     global channel
-    channel = client.get_channel(1039280597677383711)
+    channel = client.get_channel(None) # Change None to the channel id
     for guild in client.guilds:
         if guild == GUILD:
             break
@@ -52,7 +52,7 @@ async def tweet():
     for tweet in tweets:
         tid = tweet.id
         isTweet = ifroottweet(tweet._json)
-        # print(isTweet)
+        
 
     id = 0
     fid = '' 
